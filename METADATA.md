@@ -7,24 +7,31 @@ Container: landis_necn_scrpple_bioharvest.sdef
 
 ## Models 
 All landscape scenarios are included in the ../Models folder. 
-- ../Models/Diagnostics includes markdown files showing the model diagnostics for the flux tower and watershed models. 
-- ../Models/Future includes all scenarios set up to run at watershed scale using future climate. 
-- ../Models/Flux_Tower_Diagnostics includes the flux tower model run for 50 years using climate randomly sampled from the historical record. This was used for the flux tower diagnostics. 
-- ../Models/Flux_Tower_V1_ZR_19012023 includes the flux tower model run from 1995 - 2021 and is used for calibration against flux tower data. 
-- ../Models/Flux_Tower_V1_ZR_19012023_OG includes the flux tower model run from 1995 - 2021 using the original version of NECN. 
-- Landis_WS_Diagnostics includes the watershed model run for 50 y ears using climate randomly sampled from the historical record. This was used for the watershed diagnostics. 
-- Landis_WS_V1_ZR_19012023 includes the watershed model run from 1995 - 2021 and is used for watershed calibration. 
-- Landis_WS_V1_ZR_19012023_OG includes the watershed model run from 1995 - 2021 using the original version of NECN. 
+- Diagnostics: Includes markdown files showing the model diagnostics for the flux tower and watershed models. 
+  
+- Future: Includes all scenarios set up to run at watershed scale using future climate. 
+  
+- Flux_Tower_Diagnostics: Includes the flux tower model run for 50 years using climate randomly sampled from the historical record. This was used for the flux tower diagnostics. 
+  
+- Flux_Tower_V1_ZR_19012023: Includes the flux tower model run from 1995 - 2021 and is used for calibration against flux tower data. 
+  
+- Flux_Tower_V1_ZR_19012023_OG: Includes the flux tower model run from 1995 - 2021 using the original version of NECN. 
+  
+- Landis_WS_Diagnostics: Includes the watershed model run for 50 y ears using climate randomly sampled from the historical record. This was used for the watershed diagnostics. 
+  
+- Landis_WS_V1_ZR_19012023: Includes the watershed model run from 1995 - 2021 and is used for watershed calibration. 
+  
+- Landis_WS_V1_ZR_19012023_OG: Includes the watershed model run from 1995 - 2021 using the original version of NECN. 
 
 
 ## Scripts 
 Create the figures for model diagnostics 
-- ../Scripts/model_diagnostics.R
+- model_diagnostics.R
 
 A text file with commands to run each landscape scenario is supplied to the submission script. 
-- ../Scripts/commands_mdoel_batch.txt 
-- ../Scripts/model_batch.csh 
+- commands_mdoel_batch.txt 
+- model_batch.csh 
 
 Analyzing the results of the multiscale calibration and future scenarios
-- ../Scripts/make_figures_tables.R
-- ../Scripts/analyze_future_scenarios.R
+- make_figures_tables.R
+- analyze_future_scenarios.R
