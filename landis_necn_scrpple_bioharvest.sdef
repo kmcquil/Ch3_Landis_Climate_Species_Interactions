@@ -1,0 +1,83 @@
+# Received file fall 2022 w/ last modification noted as: 31 May 2019 by Kelsey Ruckert <klr324@psu.edu>.
+# Modified 01 Dec 2022 by Kate Jones <kejones8@ncsu.edu>.
+# Modified to grab my modified version of NECN 19 Dec 2022 by Katie McQuillan <kmcquil@ncsu.edu>.
+
+Bootstrap: debootstrap
+OSVersion: focal
+MirrorURL: http://us.archive.ubuntu.com/ubuntu/
+From: ubuntu:20.04
+
+%post
+chmod -R 777 /root
+
+# Upgrade packages in base image and install additional packages
+apt-get -y update
+DEBIAN_FRONTEND=noninteractive apt-get install -y git wget software-properties-common
+apt-get install unzip
+
+# Install .NET
+wget -q https://packages.microsoft.com/config/ubuntu/16.04/packages-microsoft-prod.deb
+dpkg -i packages-microsoft-prod.deb
+add-apt-repository universe
+apt-get install -y apt-transport-https
+apt-get update
+apt-get install -y dotnet-sdk-2.1
+apt-get clean
+rm packages-microsoft-prod.deb
+
+# LANDIS
+wget https://github.com/LANDIS-II-Foundation/Core-Model-v7-LINUX/archive/refs/tags/v7.zip
+unzip v7.zip
+pwd
+ls
+echo "About to build in Tool-Console/src"
+cd /Core-Model-v7-LINUX-7/Tool-Console/src; dotnet build -c Release
+echo "installing gdal dep"
+apt-get install -y libjpeg62
+apt-get install -y libpng16-16
+
+# LANDIS DLLs
+cd /Core-Model-v7-LINUX-7/; wget https://github.com/kmcquil/Support-Library-Dlls-v7/archive/refs/tags/v7.1.zip
+cd /Core-Model-v7-LINUX-7/; unzip v7.1.zip
+cd /Core-Model-v7-LINUX-7/; cp /Core-Model-v7-LINUX-7/Support-Library-Dlls-v7-7.1/* /Core-Model-v7-LINUX-7/build/extensions/
+
+# Get NECN Extension 
+cd /Core-Model-v7-LINUX-7/; wget https://github.com/kmcquil/Extension-NECN-Succession_Linux/archive/refs/tags/v6.95.zip
+cd /Core-Model-v7-LINUX-7/; unzip v6.95.zip
+cd /Core-Model-v7-LINUX-7/Extension-NECN-Succession_Linux-6.95/src; dotnet build -c Release NECN-succession.csproj 
+cd /Core-Model-v7-LINUX-7/Extension-NECN-Succession_Linux-6.95/deploy/installer; dotnet /Core-Model-v7-LINUX-7/build/Release/Landis.Extensions.dll add "NECN_Succession 6.9.txt" 
+
+# Get SCRPPLE Extension 
+cd /Core-Model-v7-LINUX-7/; wget https://github.com/kmcquil/Extension-SCRPPLE-Linux/archive/refs/tags/v3.2.zip
+cd /Core-Model-v7-LINUX-7/; unzip v3.2.zip
+cd /Core-Model-v7-LINUX-7/Extension-SCRPPLE-Linux-3.2/src; dotnet build -c Release scrapple.csproj
+cd /Core-Model-v7-LINUX-7/Extension-SCRPPLE-Linux-3.2/deploy/installer; dotnet /Core-Model-v7-LINUX-7/build/Release/Landis.Extensions.dll add "Scrapple 3.txt" 
+
+# Get Biomass Harvest Extension
+cd /Core-Model-v7-LINUX-7/; wget https://github.com/kmcquil/Extension-Biomass-Harvest-4.1_Linux/archive/refs/tags/v4.1.1.zip
+cd /Core-Model-v7-LINUX-7/; unzip v4.1.1.zip 
+cd /Core-Model-v7-LINUX-7/Extension-Biomass-Harvest-4.1_Linux-4.1.1/src; dotnet build -c Release
+cd /Core-Model-v7-LINUX-7/Extension-Biomass-Harvest-4.1_Linux-4.1.1/deploy/installer; dotnet /Core-Model-v7-LINUX-7/build/Release/Landis.Extensions.dll add "Biomass Harvest 4.1.txt" 
+
+# Get Output-Biomass-By-Age
+cd /Core-Model-v7-LINUX-7/; wget https://github.com/kmcquil/Extension-Output-Biomass-By-Age_Linux/archive/refs/tags/v3.zip
+cd /Core-Model-v7-LINUX-7/; unzip v3.zip 
+cd /Core-Model-v7-LINUX-7/Extension-Output-Biomass-By-Age_Linux-3/src; dotnet build -c Release
+cd /Core-Model-v7-LINUX-7/Extension-Output-Biomass-By-Age_Linux-3/deploy/installer; dotnet /Core-Model-v7-LINUX-7/build/Release/Landis.Extensions.dll add "Output Biomass-by-Age 3.0.txt" 
+
+# Set up some nice directories relevant to ACI. -p setting must be specified
+mkdir -p /storage/home
+mkdir -p /storage/work
+mkdir -p /gpfs/group
+mkdir -p /gpfs/scratch
+mkdir -p /var/spool/torque
+
+# Create the /landis directory for binding the scenario folder (specific to running landis)
+# to bind a folder on ACI the folder must be created and
+# must have the -p setting otherwise the folder will not bind and the run will fail.
+mkdir -p /landis
+
+%runscript
+cd /landis
+dotnet /Core-Model-v7-LINUX-7/build/Release/Landis.Console.dll "$@"
+

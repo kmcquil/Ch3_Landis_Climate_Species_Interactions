@@ -1,0 +1,12 @@
+LandisData  Ecoregions
+
+>>         Map
+>> Active  Code  Name   Description
+>> ------  ----  -----  -----------
+  	yes    1   eco1   "ones"
+	yes    2   eco2   "twos"
+	yes    3   eco3   "threes"
+	yes    4   eco4   "fours"
+	yes    5   eco5   "fives"
+	yes    6   eco6   "six"
+	no     0   eco0   "zeros"

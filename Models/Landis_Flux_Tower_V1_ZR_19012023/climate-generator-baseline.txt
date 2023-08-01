@@ -1,0 +1,23 @@
+LandisData "Climate Config"				
+		
+ClimateTimeSeries			Monthly_SequencedYears
+ClimateFile				climate_flux_tower_2000_2021.csv << cwt_avg_climate_nodrought_1979_2078_wrh.csv  << climate_flux_tower_spinup_10.csv  << climate_flux_tower_2000_2021.csv 
+ClimateFileFormat			Monthly_Temp-C_Precip-mmMonth
+
+SpinUpClimateTimeSeries			Monthly_SequencedYears
+SpinUpClimateFile			climate_flux_tower_2000_2021.csv <<cwt_avg_climate_nodrought_1979_2078_wrh.csv    << climate_flux_tower_spinup_10.csv   << 
+SpinUpClimateFileFormat			Monthly_Temp-C_Precip-mmMonth
+
+UsingFireClimate			no
+>>FineFuelMoistureCode			85
+>>DuffMoistureCode			6
+>>DroughtCode				15
+>>FirstDayFire				31
+>>LastDayFire				334
+
+
+
+
+
+
+

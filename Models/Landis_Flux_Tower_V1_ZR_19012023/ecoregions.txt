@@ -1,0 +1,6 @@
+LandisData  Ecoregions
+
+>>         Map
+>> Active  Code  Name   Description
+>> ------  ----  -----  -----------
+  	yes    1   eco2   "ones"

@@ -1,0 +1,15 @@
+LandisData      "Initial Communities"
+MapCode  1 
+      PinuStro 20 (9) 
+      AcerRubr 30 (31) 50 (1198) 40 (514) 20 (17) 
+      BetuLent 80 (669) 20 (17) 50 (537) 60 (714) 30 (67) 40 (198) 90 (933) 
+      Cary 70 (679) 60 (468) 
+      CornFlor 20 (77) 10 (4) 
+      FaguGran 20 (17) 60 (454) 50 (237) 
+      FraxAmer 20 (13) 30 (65) 
+      LiriTuli 120 (2834) 130 (2000) 140 (2000)
+      NyssSylv 30 (168) 10 (17) 40 (378) 20 (229) 60 (1065) 
+      OxydArbo 20 (167) 30 (759) 40 (463) 
+      QuerAlba 70 (1176) 90 (860) 140 (3066) 50 (518) 30 (99) 60 (910) 
+      QuerRubr 30 (145) 
+      QuerVelu 60 (573) 
