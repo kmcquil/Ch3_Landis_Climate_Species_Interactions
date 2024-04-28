@@ -8,7 +8,7 @@ We set up the updated model to run at Coweeta watersheds 14 and 18. To check mod
     - SOM1 Soil: 0.14 
     - SOM2: 0.51
     - SOM3: 0.02
-![My Image](/Models/Basic/Diagnostics/WatershedFigs/somtc.PNG)
+![My Image](../Models/Basic/Diagnostics/WatershedFigs/somtc.PNG)
 ![My Image](/Models/Basic/Diagnostics/WatershedFigs/som_pools.PNG)
 
 - The average mineral N is 4.0 g N m-2. 
@@ -20,6 +20,7 @@ We set up the updated model to run at Coweeta watersheds 14 and 18. To check mod
 
 - The average LAI is 6.2. 
     - (Bolstad, Vose, & McNulty, 2001) found LAI between 2.7 and 8.2 with a median of 5.8 m2. 
+![My Image](/Models/Basic/Diagnostics/WatershedFigs/lai.PNG)
 
 - The average NEE is -147 g C m-2 yr-1.
     - (Oishi et al., 2018) found using the flux tower at Coweeta from 2011 - 2015 that the average NEE is -244 gC m-2 yr-1 

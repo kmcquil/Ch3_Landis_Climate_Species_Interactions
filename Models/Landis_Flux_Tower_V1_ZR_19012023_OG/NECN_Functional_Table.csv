@@ -1,4 +1,0 @@
-FunctionalGroupName,FunctionalGroupIndex,TemperatureCurve1,TemperatureCurve2,TemperatureCurve3,TemperatureCurve4,FractionANPPtoLeaf,LeafBiomassToLAI,KLAI,MaximumLAI,MoistureCurve2,MoistureCurve3,WoodDecayRate,MonthlyWoodMortality,LongevityMortalityShape,FoliageDropMonth,CoarseRootFraction,FineRootFraction,MinLAI,GrowthLAI,Fwue1,Fwue2
-Tracheid,1,25,45,1,2,0.4,-0.9,6000,3,1,0.9,0.075,1.00E-04,5.5,7,0.2,0.1,0.1,0.47,1,0
-Ring,2,25,45,3,5,0.4,-0.9,6000,3,0.9,0.6,0.075,1.00E-04,7.5,9,0.1,0.1,0.075,0.47,1,0
-Diffuse,3,25,45,1,2,0.48,-0.9,6000,3.5,1,0.9,0.075,1.00E-04,7.5,9,0.1,0.1,0.1,0.47,1,0
