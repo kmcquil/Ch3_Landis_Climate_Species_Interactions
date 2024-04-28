@@ -31,7 +31,7 @@ We set up the updated model to run at Coweeta watersheds 14 and 18. To check mod
 ![My Image](Figs/npp.png)
 
 - The average ET is 887 mm yr-1.
-    - (Oishi et al., 2018) found using the flux tower at Coweeta from 2011 - 2015 that average ET is 856 mm yr-1. 
+    - Streamflow and precipitation from WS14 and WS18 were used to calculate ET as P-Q using a vegetation year from May - June. The average ET from 2011 - 2020 was 1016 mm yr-1. (Oishi et al., 2018) found using the flux tower at Coweeta from 2011 - 2015 that average ET was 856 mm yr-1. Our model estiamte falls within this range. 
 ![My Image](Figs/et.png)
 
 - The average AGB is 22,659 g biomass.
