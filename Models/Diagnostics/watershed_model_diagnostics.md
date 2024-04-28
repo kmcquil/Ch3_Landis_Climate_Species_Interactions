@@ -8,7 +8,7 @@ We set up the updated model to run at Coweeta watersheds 14 and 18. To check mod
     - SOM1 Soil: 0.14 
     - SOM2: 0.51
     - SOM3: 0.02
-![My Image](..Models/Diagnostics/Figs/somtc.PNG)
+![My Image](../Figs/somtc.PNG)
 ![My Image](../Models/Diagnostics/Figs/som_pools.PNG)
 
 - The average mineral N is 4.0 g N m-2. 
